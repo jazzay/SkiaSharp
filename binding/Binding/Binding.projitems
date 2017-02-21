@@ -43,6 +43,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)SKCodec.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SKRegion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)PreserveAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SKWindow.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Util.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SKSVG.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SKXml.cs" />

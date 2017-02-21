@@ -59,6 +59,9 @@ using sk_xmlwriter_t = System.IntPtr;
 using sk_3dview_t = System.IntPtr;
 using sk_matrix44_t = System.IntPtr;
 
+using sk_window_t = System.IntPtr;
+
+
 namespace SkiaSharp
 {
 	internal static class SkiaApi
@@ -1582,6 +1585,24 @@ namespace SkiaSharp
 		public extern static bool sk_region_op2(sk_region_t r, sk_region_t src, SKRegionOperation op);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static void sk_region_get_bounds(sk_region_t r, out SKRectI rect);
+
+        // SKWindow
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+		public extern static sk_window_t sk_window_new();
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+		public extern static void sk_window_destroy(sk_window_t t);
+
+        // SKApplication
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void sk_application_init();
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void sk_application_term();
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+        public extern static void sk_application_run();
+
+		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
+        public extern static sk_window_t sk_create_main_window();
+
 	}
 
 	// This is the actual context passed to native code.
