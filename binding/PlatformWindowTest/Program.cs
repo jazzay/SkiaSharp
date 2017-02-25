@@ -28,12 +28,13 @@ namespace PlatformWindowTest
 		DateTime mPrevTime = DateTime.Now;
 
 		public MainWindow()
+			: base(NativeRenderBackend.OpenGL)
 		{
 			SKApplication.Current.Idle += (s, e) =>
 			{
 				// poor man's way to hit 60 fps
 				var elapsed = (DateTime.Now - mPrevTime).TotalMilliseconds;
-				if(elapsed >= 16)
+				if (elapsed >= 16)
 				{
 					Invalidate();
 					mPrevTime = DateTime.Now;
@@ -62,7 +63,11 @@ namespace PlatformWindowTest
 			}
 		}
 
-		const int ParticleCount = 1024;
+		// Early findings on my PC (Quad Core 3.4 GHz):
+		// Raster - With Alpha blending (see below) can only handle a dozen of these
+		// OpenGL - Full Alpha - 10s of thousands of these without breaking a sweat!
+		//
+		const int ParticleCount = 256;
 		Particle[] Particles;
 
 		protected override void OnPaint(SKCanvas canvas)
@@ -70,7 +75,7 @@ namespace PlatformWindowTest
 			base.OnPaint(canvas);
 
 			// setup our Particles
-			const float ShapeRadius = 64;
+			const float ShapeRadius = 128;
 			if(Particles == null || Particles.Length == 0)
 			{
 				Particles = new Particle[ParticleCount];
@@ -95,14 +100,14 @@ namespace PlatformWindowTest
 			{
 				IsAntialias = true,
 				Style = SKPaintStyle.Fill,
-				Color = bgColor.WithBlue(80).WithAlpha(25)
+				Color = bgColor.WithBlue(80).WithAlpha(25)		// RASTER slows dramatically when Alpha is != 255 :(
 			};
 
-			for(int i = 0; i < Particles.Length; i++)
+			for (int i = 0; i < Particles.Length; i++)
 			{
-				var fillRect = SKRect.Create(Particles[i].X * this.Width, Particles[i].Y * this.Height, ShapeRadius * 2, ShapeRadius * 2);
-				canvas.DrawRect(fillRect, paint);
-				//canvas.DrawCircle(Particles[i].X * this.Width, Particles[i].Y * this.Height, ShapeRadius, paint);
+				//var fillRect = SKRect.Create(Particles[i].X * this.Width, Particles[i].Y * this.Height, ShapeRadius * 2, ShapeRadius * 2);
+				//canvas.DrawRect(fillRect, paint);
+				canvas.DrawCircle(Particles[i].X * this.Width, Particles[i].Y * this.Height, ShapeRadius, paint);
 				Particles[i].Update();
 			}
 

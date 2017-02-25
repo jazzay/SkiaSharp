@@ -44,7 +44,7 @@ void native_paint_handler(SkCanvas* canvas, void* userData)
 	}
 }
 
-sk_window_t* sk_window_new() {
+sk_window_t* sk_window_new(int renderBackend) {
 
 #if defined(SK_BUILD_FOR_WIN32)
 	void* platformData = GetModuleHandle(NULL);
@@ -52,10 +52,19 @@ sk_window_t* sk_window_new() {
 
 	SkWindow* window = SkWindow::CreateNativeWindow(platformData);
 
-	// eventually we should pass these down somehow
-	// GL backend does not work on Windows yet. Probably missing some global config step or  DLL
-	window->attach(sk_app::Window::kRaster_BackendType, sk_app::DisplayParams());
-	//window->attach(sk_app::Window::kNativeGL_BackendType, sk_app::DisplayParams());
+	sk_app::Window::BackendType backend = sk_app::Window::kRaster_BackendType;
+	if (renderBackend == 1)
+	{
+		backend = sk_app::Window::kNativeGL_BackendType;
+	}
+#ifdef SK_VULKAN
+	else if (renderBackend == 2)
+	{
+		backend = sk_app::Window::kVulkan_BackendType;
+	}
+#endif
+
+	window->attach(backend, sk_app::DisplayParams());
 
 	// setup managed callbacks
 	window->registerPaintFunc(native_paint_handler, ToWindow(window));

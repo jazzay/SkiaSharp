@@ -11,6 +11,12 @@ using System.Runtime.InteropServices;
 
 namespace SkiaSharp
 {
+	public enum NativeRenderBackend {
+		Raster = 0,		// CPU
+		OpenGL = 1,		// GPU
+		Vulkan = 2		// GPU - Not available on some platforms, falls back to Raster if not
+	};
+
 	// No dispose, the Canvas is only valid while the Surface is valid.
 	public class SKWindow : SKObject
 	{
@@ -33,10 +39,10 @@ namespace SkiaSharp
 		{
 		}
 
-		public SKWindow ()
+		public SKWindow (NativeRenderBackend renderBackend = NativeRenderBackend.Raster)
 			: this (IntPtr.Zero, true)
 		{
-			Handle = SkiaApi.sk_window_new ();
+			Handle = SkiaApi.sk_window_new ((int)renderBackend);
 		}
 
 		protected override void Dispose (bool disposing)

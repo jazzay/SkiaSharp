@@ -1589,7 +1589,7 @@ namespace SkiaSharp
 
         // SKWindow
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
-		public extern static sk_window_t sk_window_new();
+		public extern static sk_window_t sk_window_new(int renderBackEnd);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
 		public extern static void sk_window_destroy(sk_window_t t);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
