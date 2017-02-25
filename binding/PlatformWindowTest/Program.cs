@@ -13,10 +13,25 @@ namespace PlatformWindowTest
         {
             SKApplication.Init();
 
-            var window = SKApplication.CreateMainWindow();
+            var window = new MainWindow();
 
             SKApplication.Run();
             SKApplication.Terminate();
         }
     }
+
+	public class MainWindow : SKWindow
+	{
+		protected override void HandlePaint(SKCanvas canvas)
+		{
+			base.HandlePaint(canvas);
+
+			var paint = new SKPaint
+			{
+				Style = SKPaintStyle.Fill,
+				Color = SKColors.Green
+			};
+			canvas.DrawRect(new SKRect(100, 100, 400, 400), paint);
+		}
+	}
 }

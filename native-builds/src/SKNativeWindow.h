@@ -13,6 +13,9 @@
 #define HelloWorld_DEFINED
 
 #include "SkSurface.h"
+
+#if defined(USE_LEGACY_WINDOWS)
+
 #include "SkWindow.h"
 
 class GrContext;
@@ -75,4 +78,5 @@ private:
 	typedef SkOSWindow INHERITED;
 };
 
+#endif
 #endif

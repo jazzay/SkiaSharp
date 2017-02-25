@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\SkiaKeeper.c" />
+    <ClCompile Include="..\src\SKNativeWindow.cpp" />
+    <ClCompile Include="..\src\SkManagedStream.cpp" />
+    <ClCompile Include="..\src\sk_managedstream.cpp" />
+    <ClCompile Include="..\src\sk_window.cpp" />
+    <ClCompile Include="..\src\sk_xamarin.cpp" />
+    <ClCompile Include="..\src\sk_app\CommandSet.cpp">
+      <Filter>sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\GLWindowContext.cpp">
+      <Filter>sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\Window.cpp">
+      <Filter>sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\WindowContext.cpp">
+      <Filter>sk_app</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\win\GLWindowContext_win.cpp">
+      <Filter>sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\win\main_win.cpp">
+      <Filter>sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\win\RasterWindowContext_win.cpp">
+      <Filter>sk_app\win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sk_app\win\Window_win.cpp">
+      <Filter>sk_app\win</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\SKNativeWindow.h" />
+    <ClInclude Include="..\src\sk_window.h" />
+    <ClInclude Include="..\src\SkManagedStream.h" />
+    <ClInclude Include="..\src\sk_managedstream.h" />
+    <ClInclude Include="..\src\sk_xamarin.h" />
+    <ClInclude Include="..\src\sk_app\Application.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\CommandSet.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\DisplayParams.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\GLWindowContext.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\RasterWindowContext.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\Window.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\WindowContext.h">
+      <Filter>sk_app</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\win\Window_win.h">
+      <Filter>sk_app\win</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sk_app\win\WindowContextFactory_win.h">
+      <Filter>sk_app\win</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="sk_app">
+      <UniqueIdentifier>{6980a019-4a17-408b-a985-17625a3d13a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sk_app\win">
+      <UniqueIdentifier>{e539e171-4186-4df9-ad96-f9473394bd3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

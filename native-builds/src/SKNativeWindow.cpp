@@ -9,6 +9,9 @@
 
 #include "SkNativeWindow.h"
 
+#if defined(USE_LEGACY_WINDOWS)
+
+
 #include "gl/GrGLInterface.h"
 #include "GrContext.h"
 #include "SkApplication.h"
@@ -233,3 +236,6 @@ bool SkNativeWindow::onHandleChar(SkUnichar unichar) {
 SkOSWindow* create_sk_window(void* hwnd, int, char**) {
 	return new SkNativeWindow(hwnd);
 }
+
+
+#endif
