@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SkiaSharp;
+using System.Threading;
 
 namespace PlatformWindowTest
 {
@@ -11,25 +12,34 @@ namespace PlatformWindowTest
     {
         static void Main(string[] args)
         {
-            SKApplication.Init();
+            var app = new SKApplication();
 
             var window = new MainWindow();
 			window.Title = "SkiaSharp Windows";
 
 			// this runs the native message loop
-            SKApplication.Run();
-
-            SKApplication.Terminate();
+            app.Run();
         }
     }
 
 	public class MainWindow : SKWindow
 	{
-		protected override void HandlePaint(SKCanvas canvas)
-		{
-			base.HandlePaint(canvas);
+		DateTime mStartTime = DateTime.Now;
 
-			var bgColor = new SKColor(80, 80, 255, 255);
+		public MainWindow()
+		{
+			SKApplication.Current.Idle += (s, e) => Invalidate();
+		}
+
+		protected override void OnPaint(SKCanvas canvas)
+		{
+			base.OnPaint(canvas);
+
+			// some basic color animation
+			var totalElapsed = (DateTime.Now - mStartTime).TotalMilliseconds;
+
+			var modulator = Math.Sin(totalElapsed * 0.005) * 0.5 + 0.5;
+			var bgColor = new SKColor(80, (byte) (modulator * 128), 255, 255);
 			canvas.Clear(bgColor);
 
 			var centerX = this.Width / 2;

@@ -59,6 +59,7 @@ using sk_xmlwriter_t = System.IntPtr;
 using sk_3dview_t = System.IntPtr;
 using sk_matrix44_t = System.IntPtr;
 
+using sk_application_t = System.IntPtr;
 using sk_window_t = System.IntPtr;
 
 
@@ -1605,14 +1606,13 @@ namespace SkiaSharp
 
         // SKApplication
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sk_application_init();
+        public extern static sk_application_t sk_application_new();
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sk_application_term();
+        public extern static void sk_application_destroy(sk_application_t app);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
-        public extern static void sk_application_run();
-
+        public extern static void sk_application_run(sk_application_t app);
 		[DllImport(SKIA, CallingConvention = CallingConvention.Cdecl)]
-        public extern static sk_window_t sk_create_main_window();
+        public extern static void sk_application_set_idle_delegate(IntPtr pIdle);
 
 	}
 

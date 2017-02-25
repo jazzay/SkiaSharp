@@ -17,55 +17,10 @@
 // may not need this anymore as new window model is more xplat out of the box
 //#include "SkNativeWindow.h"
 
-// Newer windowing model which supports callbacks, good for managed interop
-
-#include "sk_app/Application.h"
 #include "sk_app/Window.h"
 
 typedef sk_app::Window SkWindow;
 
-
-// We need to define this to avoid linker error
-
-namespace sk_app {
-
-	Application* Application::Create(int argc, char** argv, void* platformData) {
-		return nullptr;
-	}
-}
-
-static inline sk_app::Application* AsApp(sk_app_t* capp) {
-	return reinterpret_cast<sk_app::Application*>(capp);
-}
-
-
-
-void sk_application_init() {
-	SkGraphics::Init();
-}
-
-void sk_application_run(sk_app_t* capp) {
-
-#if defined(SK_BUILD_FOR_WIN32)
-
-	MSG msg = { 0 };
-
-	// Main message loop
-	while (WM_QUIT != msg.message) {
-		if (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE)) {
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-		}
-		else {
-			AsApp(capp)->onIdle();
-		}
-	}
-#endif
-
-}
-
-void sk_application_term() {
-}
 
 static inline sk_window_t* ToWindow(SkWindow* window) {
 	return reinterpret_cast<sk_window_t*>(window);

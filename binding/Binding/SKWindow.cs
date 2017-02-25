@@ -72,10 +72,13 @@ namespace SkiaSharp
 			SkiaApi.sk_window_invalidate(Handle);
 		}
 
-		protected virtual void HandlePaint(SKCanvas canvas)
+		protected virtual void OnPaint(SKCanvas canvas)
 		{
-			// Fill with some nice default color
-			canvas.Clear(SKColors.CornflowerBlue);
+		}
+
+		private void HandlePaint(SKCanvas canvas)
+		{
+			OnPaint(canvas);
 		}
 
 		#if __IOS__
@@ -91,29 +94,5 @@ namespace SkiaSharp
 			}
 		}
 
-    }
-
-    public class SKApplication //: SKObject
-    {
-        public static void Init()
-        {
-            SkiaApi.sk_application_init();
-        }
-
-        public static void Terminate()
-        {
-            SkiaApi.sk_application_term();
-        }
-
-        public static void Run()
-        {
-            SkiaApi.sk_application_run();
-        }
-
-        public static SKWindow CreateMainWindow()
-        {
-            var nativeWnd = SkiaApi.sk_create_main_window();
-            return new SKWindow(nativeWnd, false);  // do we own this window now?
-        }
     }
 }

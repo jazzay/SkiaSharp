@@ -31,6 +31,7 @@
     <ClCompile Include="..\src\sk_app\win\Window_win.cpp">
       <Filter>sk_app\win</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\sk_application.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\SKNativeWindow.h" />
@@ -65,6 +66,7 @@
     <ClInclude Include="..\src\sk_app\win\WindowContextFactory_win.h">
       <Filter>sk_app\win</Filter>
     </ClInclude>
+    <ClInclude Include="..\src\sk_application.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sk_app">

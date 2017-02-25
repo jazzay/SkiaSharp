@@ -158,6 +158,7 @@
     <ClCompile Include="..\src\SkiaKeeper.c" />
     <ClCompile Include="..\src\SKNativeWindow.cpp" />
     <ClCompile Include="..\src\SkManagedStream.cpp" />
+    <ClCompile Include="..\src\sk_application.cpp" />
     <ClCompile Include="..\src\sk_app\CommandSet.cpp" />
     <ClCompile Include="..\src\sk_app\GLWindowContext.cpp" />
     <ClCompile Include="..\src\sk_app\Window.cpp" />
@@ -172,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\SKNativeWindow.h" />
+    <ClInclude Include="..\src\sk_application.h" />
     <ClInclude Include="..\src\sk_app\Application.h" />
     <ClInclude Include="..\src\sk_app\CommandSet.h" />
     <ClInclude Include="..\src\sk_app\DisplayParams.h" />
