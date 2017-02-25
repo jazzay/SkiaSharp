@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -56,10 +56,15 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\..\native-builds\libSkiaSharp_windows\bin\x64\Debug\libSkiaSharp.dll">
+    <Content Include="..\..\native-builds\lib\windows\x64\libSkiaSharp.dll">
       <Link>libSkiaSharp.dll</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+	<!--Useful for debugging native code:-->
+    <!--<Content Include="..\..\native-builds\libSkiaSharp_windows\bin\x64\Debug\libSkiaSharp.dll">
+      <Link>libSkiaSharp.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>-->
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

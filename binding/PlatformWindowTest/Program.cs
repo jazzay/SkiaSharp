@@ -25,15 +25,61 @@ namespace PlatformWindowTest
 	public class MainWindow : SKWindow
 	{
 		DateTime mStartTime = DateTime.Now;
+		DateTime mPrevTime = DateTime.Now;
 
 		public MainWindow()
 		{
-			SKApplication.Current.Idle += (s, e) => Invalidate();
+			SKApplication.Current.Idle += (s, e) =>
+			{
+				// poor man's way to hit 60 fps
+				var elapsed = (DateTime.Now - mPrevTime).TotalMilliseconds;
+				if(elapsed >= 16)
+				{
+					Invalidate();
+					mPrevTime = DateTime.Now;
+				}
+			};
 		}
+
+		static Random R = new Random();
+
+		struct Particle
+		{
+			public float X;
+			public float Y;
+
+			public Particle(float x, float y)
+			{
+				X = x;
+				Y = y;
+			}
+
+			public void Update()
+			{
+				// Random walk
+				X += (R.NextFloat() - 0.5f) * 0.005f;
+				Y += (R.NextFloat() - 0.5f) * 0.005f;
+			}
+		}
+
+		const int ParticleCount = 1024;
+		Particle[] Particles;
 
 		protected override void OnPaint(SKCanvas canvas)
 		{
 			base.OnPaint(canvas);
+
+			// setup our Particles
+			const float ShapeRadius = 64;
+			if(Particles == null || Particles.Length == 0)
+			{
+				Particles = new Particle[ParticleCount];
+
+				for(int i = 0; i < Particles.Length; i++)
+				{
+					Particles[i] = new Particle(R.NextFloat(), R.NextFloat());
+				}
+			}
 
 			// some basic color animation
 			var totalElapsed = (DateTime.Now - mStartTime).TotalMilliseconds;
@@ -49,17 +95,32 @@ namespace PlatformWindowTest
 			{
 				IsAntialias = true,
 				Style = SKPaintStyle.Fill,
-				Color = bgColor.WithBlue(80)
+				Color = bgColor.WithBlue(80).WithAlpha(25)
 			};
-			//canvas.DrawRect(new SKRect(centerX - 200, centerY - 100, centerX + 200, centerY + 100), paint);
+
+			for(int i = 0; i < Particles.Length; i++)
+			{
+				var fillRect = SKRect.Create(Particles[i].X * this.Width, Particles[i].Y * this.Height, ShapeRadius * 2, ShapeRadius * 2);
+				canvas.DrawRect(fillRect, paint);
+				//canvas.DrawCircle(Particles[i].X * this.Width, Particles[i].Y * this.Height, ShapeRadius, paint);
+				Particles[i].Update();
+			}
 
 			paint.Typeface = SKTypeface.FromFamilyName("Arial");
-			paint.TextSize = 72.0f;
+			paint.TextSize = ((float)modulator * 72) + 36;
 			paint.Color = SKColors.Black;
 
 			var message = "Hello World!";
 			var textWidth = paint.MeasureText(message);
 			canvas.DrawText(message, centerX - (textWidth / 2), centerY - 10, paint);
+		}
+	}
+
+	public static class RandomExtensions
+	{
+		public static float NextFloat(this Random r)
+		{
+			return (float)r.NextDouble();
 		}
 	}
 }
