@@ -48,6 +48,25 @@ namespace SkiaSharp
 			base.Dispose (disposing);
 		}
 
+		public int Width
+		{
+			get { return SkiaApi.sk_window_get_width (Handle); }
+		}
+
+		public int Height
+		{
+			get { return SkiaApi.sk_window_get_height (Handle); }
+		}
+
+		public string Title
+		{
+			set
+			{
+				var bytes = StringUtilities.GetEncodedText (value, SKTextEncoding.Utf8);
+				SkiaApi.sk_window_set_title(Handle, bytes, bytes.Length);
+			}
+		}
+
 		protected virtual void HandlePaint(SKCanvas canvas)
 		{
 			// Fill with some nice default color

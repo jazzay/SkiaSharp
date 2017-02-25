@@ -112,10 +112,24 @@ sk_window_t* sk_window_new() {
 }
 
 void sk_window_destroy(sk_window_t* cwindow) {
-	delete AsWindow(cwindow);
+	auto window = AsWindow(cwindow);
+	window->detach();
+	delete window;
 }
 
 void sk_window_set_paint_delegate(const sk_window_paint_delegate delegate) {
 	paint_delegate = delegate;
+}
+
+int sk_window_get_width(sk_window_t* cwindow) {
+	return AsWindow(cwindow)->width();
+}
+
+int sk_window_get_height(sk_window_t* cwindow) {
+	return AsWindow(cwindow)->height();
+}
+
+void sk_window_set_title(sk_window_t* cwindow, const char *title, size_t byteLength) {
+	AsWindow(cwindow)->setTitle(title);
 }
 

@@ -27,6 +27,9 @@ typedef void(*sk_window_paint_delegate)        (sk_window_t* cwindow, sk_canvas_
 SK_X_API sk_window_t* sk_window_new();
 SK_X_API void sk_window_destroy(sk_window_t*);
 SK_X_API void sk_window_set_paint_delegate(const sk_window_paint_delegate delegate);
+SK_X_API int sk_window_get_width(sk_window_t* cwindow);
+SK_X_API int sk_window_get_height(sk_window_t* cwindow);
+SK_X_API void sk_window_set_title(sk_window_t* cwindow, const char *title, size_t byteLength);
 
 SK_X_API void sk_application_init();
 SK_X_API void sk_application_run(sk_app_t* capp);
