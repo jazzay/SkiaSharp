@@ -133,3 +133,10 @@ void sk_window_set_title(sk_window_t* cwindow, const char *title, size_t byteLen
 	AsWindow(cwindow)->setTitle(title);
 }
 
+void sk_window_invalidate(sk_window_t* cwindow) {
+	AsWindow(cwindow)->inval();
+}
+
+
+
+

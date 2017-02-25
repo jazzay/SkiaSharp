@@ -30,6 +30,7 @@ SK_X_API void sk_window_set_paint_delegate(const sk_window_paint_delegate delega
 SK_X_API int sk_window_get_width(sk_window_t* cwindow);
 SK_X_API int sk_window_get_height(sk_window_t* cwindow);
 SK_X_API void sk_window_set_title(sk_window_t* cwindow, const char *title, size_t byteLength);
+SK_X_API void sk_window_invalidate(sk_window_t* cwindow);
 
 SK_X_API void sk_application_init();
 SK_X_API void sk_application_run(sk_app_t* capp);

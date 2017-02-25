@@ -67,6 +67,11 @@ namespace SkiaSharp
 			}
 		}
 
+		public void Invalidate()
+		{
+			SkiaApi.sk_window_invalidate(Handle);
+		}
+
 		protected virtual void HandlePaint(SKCanvas canvas)
 		{
 			// Fill with some nice default color
