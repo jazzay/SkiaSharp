@@ -21,11 +21,17 @@ SK_C_PLUS_PLUS_BEGIN_GUARD
 typedef struct sk_window_t sk_window_t;
 
 typedef void(*sk_window_paint_delegate)        (sk_window_t* cwindow, sk_canvas_t* ccanvas);
+typedef bool(*sk_window_mouse_delegate)        (sk_window_t* cwindow, int x, int y, int state, uint32_t modifiers);
 
 
 SK_X_API sk_window_t* sk_window_new(int renderBackend);
 SK_X_API void sk_window_destroy(sk_window_t*);
+
+// delegates
 SK_X_API void sk_window_set_paint_delegate(const sk_window_paint_delegate delegate);
+SK_X_API void sk_window_set_mouse_delegate(const sk_window_mouse_delegate delegate);
+
+// functions/properties
 SK_X_API int sk_window_get_width(sk_window_t* cwindow);
 SK_X_API int sk_window_get_height(sk_window_t* cwindow);
 SK_X_API void sk_window_set_title(sk_window_t* cwindow, const char *title, size_t byteLength);

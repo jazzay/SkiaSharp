@@ -33,6 +33,7 @@ static inline SkWindow* AsWindow(sk_window_t* cwindow) {
 // paint handler signature
 
 static sk_window_paint_delegate paint_delegate = nullptr;
+static sk_window_mouse_delegate mouse_delegate = nullptr;
 
 void native_paint_handler(SkCanvas* canvas, void* userData)
 {
@@ -42,6 +43,16 @@ void native_paint_handler(SkCanvas* canvas, void* userData)
 		sk_canvas_t* ccanvas = ToCanvas(canvas);
 		paint_delegate(cwindow, ccanvas);
 	}
+}
+
+bool native_mouse_handler(int x, int y, SkWindow::InputState state, uint32_t modifiers, void* userData)
+{
+	if (mouse_delegate != nullptr)
+	{
+		sk_window_t* cwindow = (sk_window_t*)userData;
+		return mouse_delegate(cwindow, x, y, state, modifiers);
+	}
+	return false;
 }
 
 sk_window_t* sk_window_new(int renderBackend) {
@@ -68,6 +79,7 @@ sk_window_t* sk_window_new(int renderBackend) {
 
 	// setup managed callbacks
 	window->registerPaintFunc(native_paint_handler, ToWindow(window));
+	window->registerMouseFunc(native_mouse_handler, ToWindow(window));
 
 	// host should call this
 	window->show();
@@ -83,6 +95,10 @@ void sk_window_destroy(sk_window_t* cwindow) {
 
 void sk_window_set_paint_delegate(const sk_window_paint_delegate delegate) {
 	paint_delegate = delegate;
+}
+
+void sk_window_set_mouse_delegate(const sk_window_mouse_delegate delegate) {
+	mouse_delegate = delegate;
 }
 
 int sk_window_get_width(sk_window_t* cwindow) {

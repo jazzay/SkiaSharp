@@ -238,7 +238,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
         case WM_MOUSEMOVE: 
             // only track if left button is down
-            if ((wParam & MK_LBUTTON) != 0) {
+			// JJ - we want Hover functionality as well
+            /*if ((wParam & MK_LBUTTON) != 0)*/ {
                 int xPos = GET_X_LPARAM(lParam);
                 int yPos = GET_Y_LPARAM(lParam);
 

@@ -119,6 +119,13 @@ namespace PlatformWindowTest
 			var textWidth = paint.MeasureText(message);
 			canvas.DrawText(message, centerX - (textWidth / 2), centerY - 10, paint);
 		}
+
+		protected override bool OnMouse(int x, int y, InputState state, uint modifiers)
+		{
+			var handled = base.OnMouse(x, y, state, modifiers);
+			Console.WriteLine($"Mouse: {state.ToString()} - {x}, {y}");
+			return handled;
+		}
 	}
 
 	public static class RandomExtensions

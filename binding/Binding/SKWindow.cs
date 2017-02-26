@@ -17,20 +17,34 @@ namespace SkiaSharp
 		Vulkan = 2		// GPU - Not available on some platforms, falls back to Raster if not
 	};
 
+	public enum InputState
+	{
+		Down = 0,		// must match native!
+		Up = 1,
+		Move = 2
+	}
+
 	// No dispose, the Canvas is only valid while the Surface is valid.
 	public class SKWindow : SKObject
 	{
 		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 		internal delegate void  paint_delegate (IntPtr windowPtr, IntPtr canvas);
 
+		[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+		internal delegate bool  mouse_delegate (IntPtr windowPtr, int x, int y, int state, uint modifiers);
+
 		// delegate fields
 		private static readonly paint_delegate fPaint;
+		private static readonly mouse_delegate fMouse;
 
 
 		static SKWindow()
 		{
 			fPaint = new paint_delegate(PaintInternal);
+			fMouse = new mouse_delegate(MouseInternal);
+
 			SkiaApi.sk_window_set_paint_delegate(Marshal.GetFunctionPointerForDelegate(fPaint));
+			SkiaApi.sk_window_set_mouse_delegate(Marshal.GetFunctionPointerForDelegate(fMouse));
 		}
 
 		[Preserve]
@@ -82,9 +96,19 @@ namespace SkiaSharp
 		{
 		}
 
+		protected virtual bool OnMouse(int x, int y, InputState state, uint modifiers)
+		{
+			return false;
+		}
+
 		private void HandlePaint(SKCanvas canvas)
 		{
 			OnPaint(canvas);
+		}
+
+		private bool HandleMouse(int x, int y, int state, uint modifiers)
+		{
+			return OnMouse(x, y, (InputState) state, modifiers);
 		}
 
 		#if __IOS__
@@ -100,5 +124,17 @@ namespace SkiaSharp
 			}
 		}
 
+		#if __IOS__
+		[MonoPInvokeCallback(typeof(read_delegate))]
+		#endif
+		private static bool MouseInternal (IntPtr windowPtr, int x, int y, int state, uint modifiers)
+		{
+			var window = GetObject<SKWindow> (windowPtr);
+			if(window != null)
+			{
+				return window.HandleMouse (x, y, state, modifiers);
+			}
+			return false;
+		}
     }
 }
