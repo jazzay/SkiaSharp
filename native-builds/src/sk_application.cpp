@@ -16,6 +16,12 @@
 #include "sk_app/Application.h"
 #include "sk_app/Window.h"
 
+#if defined(SK_BUILD_FOR_MAC)
+#include "SDL.h"
+#include "sk_app/mac/Window_mac.h"
+#endif
+
+
 
 typedef sk_app::Application SkApplication;
 
@@ -55,6 +61,13 @@ sk_app_t* sk_application_new() {
 		return nullptr;
 	}
 
+#if defined(SK_BUILD_FOR_MAC)
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0) {
+        SkDebugf("Could not initialize SDL!\n");
+        return nullptr;
+    }
+#endif
+
 	SkGraphics::Init();
 
 	auto app = new ApplicationImpl();
@@ -77,12 +90,43 @@ void sk_application_run(sk_app_t* capp) {
 			AsApp(capp)->onIdle();
 		}
 	}
-#endif
+#elif defined(SK_BUILD_FOR_MAC)
 
+    SDL_Event event;
+    bool done = false;
+    while (!done) {
+        while (SDL_PollEvent(&event)) {
+            switch (event.type) {
+                // events handled by the windows
+                case SDL_WINDOWEVENT:
+                case SDL_MOUSEMOTION:
+                case SDL_MOUSEBUTTONDOWN:
+                case SDL_MOUSEBUTTONUP:
+                case SDL_KEYDOWN:
+                case SDL_KEYUP:
+                    done = sk_app::Window_mac::HandleWindowEvent(event);
+                    break;
+                    
+                case SDL_QUIT:
+                    done = true;
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+
+        AsApp(capp)->onIdle();
+    }
+#endif
 }
 
 void sk_application_destroy(sk_app_t* capp) {
 	delete AsApp(capp);
+
+ #if defined(SK_BUILD_FOR_MAC)
+   SDL_Quit();
+#endif	
 }
 
 void sk_application_set_idle_delegate(const sk_application_idle_delegate delegate) {

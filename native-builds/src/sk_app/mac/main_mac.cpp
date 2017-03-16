@@ -6,7 +6,7 @@
 */
 
 #include "SkTypes.h"
-#include "SkTHash.h"
+//#include "SkTHash.h"
 #include "SDL.h"
 #include "Timer.h"
 #include "Window_mac.h"

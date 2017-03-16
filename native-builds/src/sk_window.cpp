@@ -59,6 +59,8 @@ sk_window_t* sk_window_new(int renderBackend) {
 
 #if defined(SK_BUILD_FOR_WIN32)
 	void* platformData = GetModuleHandle(NULL);
+#else
+	void* platformData = nullptr;
 #endif
 
 	SkWindow* window = SkWindow::CreateNativeWindow(platformData);

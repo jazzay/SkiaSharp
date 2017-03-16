@@ -11,6 +11,8 @@
 #include "SkSurface.h"
 #include "VulkanWindowContext.h"
 
+#ifdef SK_VULKAN
+
 #include "vk/GrVkInterface.h"
 #include "vk/GrVkMemory.h"
 #include "vk/GrVkUtil.h"
@@ -603,3 +605,6 @@ void VulkanWindowContext::swapBuffers() {
 }
 
 }   //namespace sk_app
+
+
+#endif // SK_VULKAN

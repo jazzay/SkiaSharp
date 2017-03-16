@@ -177,7 +177,7 @@ bool Window_mac::handleEvent(const SDL_Event& event) {
 
         case SDL_MOUSEMOTION:
             // only track if left button is down
-            if (event.motion.state & SDL_BUTTON_LMASK) {
+            /*if (event.motion.state & SDL_BUTTON_LMASK)*/ {
                 this->onMouse(event.motion.x, event.motion.y,
                               Window::kMove_InputState, get_modifiers(event));
             }

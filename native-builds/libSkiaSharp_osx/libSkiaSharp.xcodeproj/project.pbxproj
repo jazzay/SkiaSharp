@@ -54,6 +54,36 @@
 		3488AE1D1D1ADC7E00BE2DC3 /* libzlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3488AE111D1ADC3F00BE2DC3 /* libzlib.a */; };
 		34C653D71D76017D000C1D5D /* libskia_opts_sse42.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21C9519A1C03D392003A1E1D /* libskia_opts_sse42.a */; };
 		34D3B8451E2D0EEA00731C1C /* libexpat_static.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D3B82E1E2D0EDE00731C1C /* libexpat_static.a */; };
+		960C97891E7A1A23003AF5D6 /* libsdl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C97881E7A1A04003AF5D6 /* libsdl.a */; };
+		960C978F1E7A1BE5003AF5D6 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C978E1E7A1BE5003AF5D6 /* Carbon.framework */; };
+		960C97911E7A1BFE003AF5D6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C97901E7A1BFE003AF5D6 /* Cocoa.framework */; };
+		960C97931E7A1C34003AF5D6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C97921E7A1C34003AF5D6 /* CoreVideo.framework */; };
+		960C97951E7A1C4D003AF5D6 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C97941E7A1C4D003AF5D6 /* IOKit.framework */; };
+		960C97D71E7A5128003AF5D6 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C97D61E7A5128003AF5D6 /* libiconv.tbd */; };
+		960C97D91E7A515F003AF5D6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 960C97D81E7A515F003AF5D6 /* OpenGL.framework */; };
+		96DEBAAE1E79FE090067E19D /* sk_application.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAAA1E79FE090067E19D /* sk_application.h */; };
+		96DEBAAF1E79FE090067E19D /* sk_window.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAAB1E79FE090067E19D /* sk_window.h */; };
+		96DEBAB01E79FE090067E19D /* sk_application.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAAC1E79FE090067E19D /* sk_application.cpp */; };
+		96DEBAB11E79FE090067E19D /* sk_window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAAD1E79FE090067E19D /* sk_window.cpp */; };
+		96DEBAD81E79FE310067E19D /* Application.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBACB1E79FE310067E19D /* Application.h */; };
+		96DEBAD91E79FE310067E19D /* CommandSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBACC1E79FE310067E19D /* CommandSet.h */; };
+		96DEBADA1E79FE310067E19D /* DisplayParams.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBACD1E79FE310067E19D /* DisplayParams.h */; };
+		96DEBADB1E79FE310067E19D /* GLWindowContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBACE1E79FE310067E19D /* GLWindowContext.h */; };
+		96DEBADC1E79FE310067E19D /* RasterWindowContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBACF1E79FE310067E19D /* RasterWindowContext.h */; };
+		96DEBADD1E79FE310067E19D /* VulkanWindowContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAD01E79FE310067E19D /* VulkanWindowContext.h */; };
+		96DEBADE1E79FE310067E19D /* Window.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAD11E79FE310067E19D /* Window.h */; };
+		96DEBADF1E79FE310067E19D /* WindowContext.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAD21E79FE310067E19D /* WindowContext.h */; };
+		96DEBAE01E79FE310067E19D /* CommandSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAD31E79FE310067E19D /* CommandSet.cpp */; };
+		96DEBAE11E79FE310067E19D /* GLWindowContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAD41E79FE310067E19D /* GLWindowContext.cpp */; };
+		96DEBAE21E79FE310067E19D /* VulkanWindowContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAD51E79FE310067E19D /* VulkanWindowContext.cpp */; };
+		96DEBAE31E79FE310067E19D /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAD61E79FE310067E19D /* Window.cpp */; };
+		96DEBAE41E79FE310067E19D /* WindowContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAD71E79FE310067E19D /* WindowContext.cpp */; };
+		96DEBAED1E79FE7E0067E19D /* Window_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAE71E79FE7E0067E19D /* Window_mac.h */; };
+		96DEBAEE1E79FE7E0067E19D /* WindowContextFactory_mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 96DEBAE81E79FE7E0067E19D /* WindowContextFactory_mac.h */; };
+		96DEBAEF1E79FE7E0067E19D /* GLWindowContext_mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAE91E79FE7E0067E19D /* GLWindowContext_mac.cpp */; };
+		96DEBAF01E79FE7E0067E19D /* main_mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAEA1E79FE7E0067E19D /* main_mac.cpp */; };
+		96DEBAF11E79FE7E0067E19D /* RasterWindowContext_mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAEB1E79FE7E0067E19D /* RasterWindowContext_mac.cpp */; };
+		96DEBAF21E79FE7E0067E19D /* Window_mac.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 96DEBAEC1E79FE7E0067E19D /* Window_mac.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -561,6 +591,20 @@
 			remoteGlobalIDString = 0DC15EA4ADE06EC812B0409E;
 			remoteInfo = pdf;
 		};
+		960C97871E7A1A04003AF5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 960C97831E7A1A04003AF5D6 /* sdl.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2BCA8400F17FEBAC2E257FA;
+			remoteInfo = sdl;
+		};
+		960C978A1E7A1AE3003AF5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 960C97831E7A1A04003AF5D6 /* sdl.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C4E049A133A4CD4C372FBB3;
+			remoteInfo = sdl;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -603,6 +647,36 @@
 		34FEFE841D015718002A83B6 /* libpng.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libpng.xcodeproj; path = ../../externals/skia/out/gyp/libpng.xcodeproj; sourceTree = "<group>"; };
 		34FEFE871D015718002A83B6 /* pdf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pdf.xcodeproj; path = ../../externals/skia/out/gyp/pdf.xcodeproj; sourceTree = "<group>"; };
 		34FEFE8D1D015718002A83B6 /* skia_lib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = skia_lib.xcodeproj; path = ../../externals/skia/out/gyp/skia_lib.xcodeproj; sourceTree = "<group>"; };
+		960C97831E7A1A04003AF5D6 /* sdl.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sdl.xcodeproj; path = ../../externals/skia/out/gyp/sdl.xcodeproj; sourceTree = "<group>"; };
+		960C978E1E7A1BE5003AF5D6 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		960C97901E7A1BFE003AF5D6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		960C97921E7A1C34003AF5D6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		960C97941E7A1C4D003AF5D6 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		960C97D61E7A5128003AF5D6 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		960C97D81E7A515F003AF5D6 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		96DEBAAA1E79FE090067E19D /* sk_application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sk_application.h; path = ../src/sk_application.h; sourceTree = "<group>"; };
+		96DEBAAB1E79FE090067E19D /* sk_window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sk_window.h; path = ../src/sk_window.h; sourceTree = "<group>"; };
+		96DEBAAC1E79FE090067E19D /* sk_application.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sk_application.cpp; path = ../src/sk_application.cpp; sourceTree = "<group>"; };
+		96DEBAAD1E79FE090067E19D /* sk_window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = sk_window.cpp; path = ../src/sk_window.cpp; sourceTree = "<group>"; };
+		96DEBACB1E79FE310067E19D /* Application.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Application.h; path = ../src/sk_app/Application.h; sourceTree = "<group>"; };
+		96DEBACC1E79FE310067E19D /* CommandSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommandSet.h; path = ../src/sk_app/CommandSet.h; sourceTree = "<group>"; };
+		96DEBACD1E79FE310067E19D /* DisplayParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DisplayParams.h; path = ../src/sk_app/DisplayParams.h; sourceTree = "<group>"; };
+		96DEBACE1E79FE310067E19D /* GLWindowContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLWindowContext.h; path = ../src/sk_app/GLWindowContext.h; sourceTree = "<group>"; };
+		96DEBACF1E79FE310067E19D /* RasterWindowContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RasterWindowContext.h; path = ../src/sk_app/RasterWindowContext.h; sourceTree = "<group>"; };
+		96DEBAD01E79FE310067E19D /* VulkanWindowContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VulkanWindowContext.h; path = ../src/sk_app/VulkanWindowContext.h; sourceTree = "<group>"; };
+		96DEBAD11E79FE310067E19D /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Window.h; path = ../src/sk_app/Window.h; sourceTree = "<group>"; };
+		96DEBAD21E79FE310067E19D /* WindowContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowContext.h; path = ../src/sk_app/WindowContext.h; sourceTree = "<group>"; };
+		96DEBAD31E79FE310067E19D /* CommandSet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CommandSet.cpp; path = ../src/sk_app/CommandSet.cpp; sourceTree = "<group>"; };
+		96DEBAD41E79FE310067E19D /* GLWindowContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLWindowContext.cpp; path = ../src/sk_app/GLWindowContext.cpp; sourceTree = "<group>"; };
+		96DEBAD51E79FE310067E19D /* VulkanWindowContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VulkanWindowContext.cpp; path = ../src/sk_app/VulkanWindowContext.cpp; sourceTree = "<group>"; };
+		96DEBAD61E79FE310067E19D /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Window.cpp; path = ../src/sk_app/Window.cpp; sourceTree = "<group>"; };
+		96DEBAD71E79FE310067E19D /* WindowContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WindowContext.cpp; path = ../src/sk_app/WindowContext.cpp; sourceTree = "<group>"; };
+		96DEBAE71E79FE7E0067E19D /* Window_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Window_mac.h; path = ../src/sk_app/mac/Window_mac.h; sourceTree = "<group>"; };
+		96DEBAE81E79FE7E0067E19D /* WindowContextFactory_mac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WindowContextFactory_mac.h; path = ../src/sk_app/mac/WindowContextFactory_mac.h; sourceTree = "<group>"; };
+		96DEBAE91E79FE7E0067E19D /* GLWindowContext_mac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GLWindowContext_mac.cpp; path = ../src/sk_app/mac/GLWindowContext_mac.cpp; sourceTree = "<group>"; };
+		96DEBAEA1E79FE7E0067E19D /* main_mac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main_mac.cpp; path = ../src/sk_app/mac/main_mac.cpp; sourceTree = "<group>"; };
+		96DEBAEB1E79FE7E0067E19D /* RasterWindowContext_mac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RasterWindowContext_mac.cpp; path = ../src/sk_app/mac/RasterWindowContext_mac.cpp; sourceTree = "<group>"; };
+		96DEBAEC1E79FE7E0067E19D /* Window_mac.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Window_mac.cpp; path = ../src/sk_app/mac/Window_mac.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -610,6 +684,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				960C97D91E7A515F003AF5D6 /* OpenGL.framework in Frameworks */,
+				960C97D71E7A5128003AF5D6 /* libiconv.tbd in Frameworks */,
+				960C97951E7A1C4D003AF5D6 /* IOKit.framework in Frameworks */,
+				960C97931E7A1C34003AF5D6 /* CoreVideo.framework in Frameworks */,
+				960C97911E7A1BFE003AF5D6 /* Cocoa.framework in Frameworks */,
+				960C978F1E7A1BE5003AF5D6 /* Carbon.framework in Frameworks */,
+				960C97891E7A1A23003AF5D6 /* libsdl.a in Frameworks */,
 				34D3B8451E2D0EEA00731C1C /* libexpat_static.a in Frameworks */,
 				34770FB71E2D07C6009471AF /* libskia_svg.a in Frameworks */,
 				34770FB81E2D07C6009471AF /* libskia_xml.a in Frameworks */,
@@ -659,6 +740,7 @@
 		21C9514C1C03D27A003A1E1D = {
 			isa = PBXGroup;
 			children = (
+				960C978D1E7A1B6D003AF5D6 /* Frameworks */,
 				21C951561C03D27A003A1E1D /* Products */,
 				21C951651C03D2E3003A1E1D /* skia_libs */,
 				343DAE2D1C3F26BF00FAD826 /* Source */,
@@ -676,19 +758,15 @@
 		21C951651C03D2E3003A1E1D /* skia_libs */ = {
 			isa = PBXGroup;
 			children = (
+				960C97831E7A1A04003AF5D6 /* sdl.xcodeproj */,
 				34FEFE781D015718002A83B6 /* codec_android.xcodeproj */,
 				34FEFE7B1D015718002A83B6 /* codec.xcodeproj */,
 				21C9516C1C03D36D003A1E1D /* core.xcodeproj */,
-				21C951B91C03D3DB003A1E1D /* CoreFoundation.framework */,
-				21C951C11C03D419003A1E1D /* CoreGraphics.framework */,
-				21C951BD1C03D3FD003A1E1D /* CoreServices.framework */,
-				21C951BF1C03D409003A1E1D /* CoreText.framework */,
 				3488ADFC1D1ADC3F00BE2DC3 /* dng_sdk.xcodeproj */,
 				21C951781C03D380003A1E1D /* effects.xcodeproj */,
 				21C951ED1C03D551003A1E1D /* etc1.xcodeproj */,
 				34D3B8241E2D0EDE00731C1C /* expat.xcodeproj */,
 				21C951A11C03D39B003A1E1D /* gpu.xcodeproj */,
-				21C951BB1C03D3EA003A1E1D /* ImageIO.framework */,
 				21C9517E1C03D38A003A1E1D /* images.xcodeproj */,
 				21C951D71C03D4F9003A1E1D /* ktx.xcodeproj */,
 				21C951CC1C03D465003A1E1D /* libc++.tbd */,
@@ -829,6 +907,11 @@
 		343DAE2D1C3F26BF00FAD826 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				96DEBAE51E79FE3D0067E19D /* sk_app */,
+				96DEBAAA1E79FE090067E19D /* sk_application.h */,
+				96DEBAAB1E79FE090067E19D /* sk_window.h */,
+				96DEBAAC1E79FE090067E19D /* sk_application.cpp */,
+				96DEBAAD1E79FE090067E19D /* sk_window.cpp */,
 				340303981C40543C00630F26 /* sk_managedstream.cpp */,
 				340303991C40543C00630F26 /* sk_managedstream.h */,
 				3403039A1C40543C00630F26 /* SkManagedStream.cpp */,
@@ -938,6 +1021,66 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		960C97841E7A1A04003AF5D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				960C97881E7A1A04003AF5D6 /* libsdl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		960C978D1E7A1B6D003AF5D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				960C97D81E7A515F003AF5D6 /* OpenGL.framework */,
+				960C97D61E7A5128003AF5D6 /* libiconv.tbd */,
+				960C97941E7A1C4D003AF5D6 /* IOKit.framework */,
+				960C97921E7A1C34003AF5D6 /* CoreVideo.framework */,
+				960C97901E7A1BFE003AF5D6 /* Cocoa.framework */,
+				960C978E1E7A1BE5003AF5D6 /* Carbon.framework */,
+				21C951BB1C03D3EA003A1E1D /* ImageIO.framework */,
+				21C951B91C03D3DB003A1E1D /* CoreFoundation.framework */,
+				21C951C11C03D419003A1E1D /* CoreGraphics.framework */,
+				21C951BD1C03D3FD003A1E1D /* CoreServices.framework */,
+				21C951BF1C03D409003A1E1D /* CoreText.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		96DEBAE51E79FE3D0067E19D /* sk_app */ = {
+			isa = PBXGroup;
+			children = (
+				96DEBAE61E79FE500067E19D /* mac */,
+				96DEBACB1E79FE310067E19D /* Application.h */,
+				96DEBACC1E79FE310067E19D /* CommandSet.h */,
+				96DEBACD1E79FE310067E19D /* DisplayParams.h */,
+				96DEBACE1E79FE310067E19D /* GLWindowContext.h */,
+				96DEBACF1E79FE310067E19D /* RasterWindowContext.h */,
+				96DEBAD01E79FE310067E19D /* VulkanWindowContext.h */,
+				96DEBAD11E79FE310067E19D /* Window.h */,
+				96DEBAD21E79FE310067E19D /* WindowContext.h */,
+				96DEBAD31E79FE310067E19D /* CommandSet.cpp */,
+				96DEBAD41E79FE310067E19D /* GLWindowContext.cpp */,
+				96DEBAD51E79FE310067E19D /* VulkanWindowContext.cpp */,
+				96DEBAD61E79FE310067E19D /* Window.cpp */,
+				96DEBAD71E79FE310067E19D /* WindowContext.cpp */,
+			);
+			name = sk_app;
+			sourceTree = "<group>";
+		};
+		96DEBAE61E79FE500067E19D /* mac */ = {
+			isa = PBXGroup;
+			children = (
+				96DEBAE71E79FE7E0067E19D /* Window_mac.h */,
+				96DEBAE81E79FE7E0067E19D /* WindowContextFactory_mac.h */,
+				96DEBAE91E79FE7E0067E19D /* GLWindowContext_mac.cpp */,
+				96DEBAEA1E79FE7E0067E19D /* main_mac.cpp */,
+				96DEBAEB1E79FE7E0067E19D /* RasterWindowContext_mac.cpp */,
+				96DEBAEC1E79FE7E0067E19D /* Window_mac.cpp */,
+			);
+			name = mac;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -945,9 +1088,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DEBADF1E79FE310067E19D /* WindowContext.h in Headers */,
 				3403039F1C40543C00630F26 /* SkManagedStream.h in Headers */,
 				3403039D1C40543C00630F26 /* sk_managedstream.h in Headers */,
+				96DEBADE1E79FE310067E19D /* Window.h in Headers */,
+				96DEBAD91E79FE310067E19D /* CommandSet.h in Headers */,
+				96DEBADC1E79FE310067E19D /* RasterWindowContext.h in Headers */,
 				3403038F1C404FD100630F26 /* sk_xamarin.h in Headers */,
+				96DEBADB1E79FE310067E19D /* GLWindowContext.h in Headers */,
+				96DEBAD81E79FE310067E19D /* Application.h in Headers */,
+				96DEBAAF1E79FE090067E19D /* sk_window.h in Headers */,
+				96DEBADD1E79FE310067E19D /* VulkanWindowContext.h in Headers */,
+				96DEBAAE1E79FE090067E19D /* sk_application.h in Headers */,
+				96DEBAED1E79FE7E0067E19D /* Window_mac.h in Headers */,
+				96DEBADA1E79FE310067E19D /* DisplayParams.h in Headers */,
+				96DEBAEE1E79FE7E0067E19D /* WindowContextFactory_mac.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,6 +1120,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				960C978B1E7A1AE3003AF5D6 /* PBXTargetDependency */,
 				34D3B8441E2D0EE400731C1C /* PBXTargetDependency */,
 				34770FB41E2D07BD009471AF /* PBXTargetDependency */,
 				34770FB61E2D07BD009471AF /* PBXTargetDependency */,
@@ -1101,6 +1257,10 @@
 				{
 					ProductGroup = 21C951CF1C03D4B8003A1E1D /* Products */;
 					ProjectRef = 21C951CE1C03D4B8003A1E1D /* ports.xcodeproj */;
+				},
+				{
+					ProductGroup = 960C97841E7A1A04003AF5D6 /* Products */;
+					ProjectRef = 960C97831E7A1A04003AF5D6 /* sdl.xcodeproj */;
 				},
 				{
 					ProductGroup = 21C951671C03D363003A1E1D /* Products */;
@@ -1405,6 +1565,13 @@
 			remoteRef = 34FEFEB81D015718002A83B6 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		960C97881E7A1A04003AF5D6 /* libsdl.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libsdl.a;
+			remoteRef = 960C97871E7A1A04003AF5D6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1412,9 +1579,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DEBAEF1E79FE7E0067E19D /* GLWindowContext_mac.cpp in Sources */,
 				343DAE301C3F26CF00FAD826 /* SkiaKeeper.c in Sources */,
+				96DEBAF11E79FE7E0067E19D /* RasterWindowContext_mac.cpp in Sources */,
+				96DEBAE31E79FE310067E19D /* Window.cpp in Sources */,
 				340303831C404C3D00630F26 /* sk_xamarin.cpp in Sources */,
+				96DEBAF01E79FE7E0067E19D /* main_mac.cpp in Sources */,
+				96DEBAE01E79FE310067E19D /* CommandSet.cpp in Sources */,
 				3403039C1C40543C00630F26 /* sk_managedstream.cpp in Sources */,
+				96DEBAE11E79FE310067E19D /* GLWindowContext.cpp in Sources */,
+				96DEBAE21E79FE310067E19D /* VulkanWindowContext.cpp in Sources */,
+				96DEBAB11E79FE090067E19D /* sk_window.cpp in Sources */,
+				96DEBAF21E79FE7E0067E19D /* Window_mac.cpp in Sources */,
+				96DEBAE41E79FE310067E19D /* WindowContext.cpp in Sources */,
+				96DEBAB01E79FE090067E19D /* sk_application.cpp in Sources */,
 				3403039E1C40543C00630F26 /* SkManagedStream.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1592,6 +1770,11 @@
 			name = expat_static;
 			targetProxy = 34D3B8431E2D0EE400731C1C /* PBXContainerItemProxy */;
 		};
+		960C978B1E7A1AE3003AF5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sdl;
+			targetProxy = 960C978A1E7A1AE3003AF5D6 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -1670,6 +1853,7 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					SK_INTERNAL,
@@ -1684,14 +1868,13 @@
 					SKIA_C_DLL,
 					"SKIA_IMPLEMENTATION=1",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -1718,6 +1901,18 @@
 					../../externals/skia/include/config,
 					../../externals/skia/include/xml,
 					../../externals/skia/include/svg,
+					../../externals/skia/include/private,
+					../../externals/skia/third_party/externals/sdl/include,
+					../../externals/skia/third_party/externals/angle2/util,
+					../../externals/skia/third_party/externals/angle2/include,
+					../../externals/skia/include/views,
+					../../externals/skia/src/core,
+					../../externals/skia/src/gpu,
+					../../externals/skia/src/image,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/System/Library/Frameworks,
+					/usr/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1751,6 +1946,18 @@
 					../../externals/skia/include/config,
 					../../externals/skia/include/xml,
 					../../externals/skia/include/svg,
+					../../externals/skia/include/private,
+					../../externals/skia/third_party/externals/sdl/include,
+					../../externals/skia/third_party/externals/angle2/util,
+					../../externals/skia/third_party/externals/angle2/include,
+					../../externals/skia/include/views,
+					../../externals/skia/src/core,
+					../../externals/skia/src/gpu,
+					../../externals/skia/src/image,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/System/Library/Frameworks,
+					/usr/lib,
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				OTHER_CPLUSPLUSFLAGS = (
